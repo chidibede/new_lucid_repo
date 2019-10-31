@@ -20,7 +20,7 @@ def popular_posts(notifications):
                 'created_at.1','updated_at.1','slug','image','content','tags',
                 'title','user_id.1','created_at','id.1'], axis=1, inplace= True)
     #ranking the action types
-    action_ranks = {'Love': 5, 'Like': 4, 'Commented': 3, 'Replied': 2}
+    action_ranks = {'Commented': 5, 'Love': 4, 'Like': 3, 'Replied': 2}
     #add the ranks to the table
     notif['ratings']= notif['action'].apply(lambda x: action_ranks[x])
     notif.head()
@@ -29,6 +29,8 @@ def popular_posts(notifications):
     # Arrange the output in descending order and viewing head to get the top 10 most popular posts
     return counts_in_ratings.sort_values('ratings', ascending=False)
     
-    
+popular_posts('notifications_new.csv')
 
 
+filename = 'model.sav'
+joblib.dump(popular_posts('notifications_new.csv'), filename)
