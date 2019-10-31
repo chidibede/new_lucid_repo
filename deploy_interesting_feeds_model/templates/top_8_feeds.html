@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="row">
+    <div class='col-sm-12 col-xs-12 col-md-6, col-lg-6 mx-auto mt-2'>
+        <div class='bg-light mx-auto p-4 mt-2 mb-4'>
+            <h3 class="text-center">Monitor Lucid Posts</h3>
+            
+                {% for post in top_8_posts %}
+                <div class="main-article">
+                    <h4>Title: {{ post[0] }}</h4>
+                    <p>Post: {{ post[1] }}</p>
+                    <p>Grade: {{ post[2] }}</p>
+                </div>
+                {% endfor %}
+            
+        </div>
+    </div>
+</div>
+{% endblock %}

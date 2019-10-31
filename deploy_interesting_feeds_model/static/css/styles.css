@@ -1,0 +1,24 @@
+body{
+    background-image: url(../img/background_img.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+/* .mybtn{
+    background-color: 
+} */
+
+
+a:hover p{
+    color:black;
+}
+
+.main-article{
+    border: 1px solid black;
+    margin: 10px;
+    padding: 20px;
+    background-color: #eef5e1;
+}
